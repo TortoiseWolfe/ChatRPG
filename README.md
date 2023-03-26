@@ -1,7 +1,7 @@
 # ChatRPG
 open source RPG gamemaster and social network
 
-"Welcome, players, to our new adventure set in the Star Wars universe, five years before the Battle of Yavin. Each of you, with your unique backgrounds and motivations, has found yourselves in Imperial custody for various reasons. You've been detained aboard an Imperial prison transport ship, "The Azure Marauder," captained by the experienced and enigmatic Lira Kelloran. Your destination: "The Iron Star," a maximum-security prison facility located on an isolated moon in the Outer Rim.
+"Welcome, players, to our new adventure set in the Star Wars universe, five years before the Battle of Yavin. Each of you, with your unique backgrounds and motivations, have found yourselves in Imperial custody for various reasons, some perhpas more deservedly so than others. You've been detained aboard an Imperial prison transport ship, "The Azure Marauder," captained by the experienced and enigmatic Lira Kelloran. Your destination: "The Iron Star," a maximum-security prison facility located on an isolated moon in the Outer Rim.
 
 As your characters interact with one another and the other prisoners on board, it becomes clear that there's more to this situation than meets the eye. You'll encounter a secretive and heavily guarded prisoner named Calen Ordo, a former Imperial engineer, whose presence on the ship has drawn the attention of both the Empire and the early Rebellion.
 
