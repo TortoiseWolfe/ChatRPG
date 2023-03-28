@@ -1,0 +1,291 @@
+{
+  "characters": [
+    {
+      "name": "Mara Suvik",
+      "attributes": {
+        "DEX": "3D",
+        "STR": "2D+2",
+        "PER": "3D+1",
+        "TEC": "2D",
+        "KNO": "4D",
+        "MEC": "2D+1"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "4D",
+          "blaster": "3D+2"
+        },
+        "STR": {
+          "brawling": "3D"
+        },
+        "PER": {
+          "bargain": "4D",
+          "persuasion": "4D+1"
+        },
+        "TEC": {
+          "first_aid": "3D"
+        },
+        "KNO": {
+          "streetwise": "4D+2",
+          "languages": "4D+1"
+        },
+        "MEC": {
+          "starship_piloting": "3D"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Blaster Pistol",
+          "type": "weapon",
+          "damage": "4D"
+        },
+        {
+          "name": "Medpac",
+          "type": "medical"
+        }
+      ],
+      "credits": 1000,
+      "healthStatus": "healthy",
+      "forcePoints": 1,
+      "vehicles": []
+    },
+
+    {
+      "name": "Professor Wookie",
+      "attributes": {
+        "DEX": "2D+1",
+        "STR": "4D",
+        "PER": "2D+2",
+        "TEC": "2D",
+        "KNO": "4D+1",
+        "MEC": "3D"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "3D"
+        },
+        "STR": {
+          "brawling": "5D"
+        },
+        "PER": {
+          "investigation": "3D+2"
+        },
+        "TEC": {
+          "first_aid": "2D+1"
+        },
+        "KNO": {
+          "scholar": "5D+1",
+          "languages": "4D+2"
+        },
+        "MEC": {
+          "starship_piloting": "3D+1"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Walking Stick",
+          "type": "weapon",
+          "damage": "2D"
+        }
+      ],
+      "credits": 1000,
+      "healthStatus": "healthy",
+      "forcePoints": 1,
+      "vehicles": []
+    },
+    {
+      "name": "Tyko",
+      "attributes": {
+        "DEX": "3D",
+        "STR": "2D+2",
+        "PER": "4D",
+        "TEC": "1D+1",
+        "KNO": "3D+1",
+        "MEC": "2D+1"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "3D+2",
+          "blaster": "3D+1"
+        },
+        "STR": {
+          "brawling": "3D"
+        },
+        "PER": {
+          "persuasion": "5D",
+          "con": "4D+2"
+        },
+        "TEC": {
+          "security": "2D"
+        },
+        "KNO": {
+          "streetwise": "4D",
+          "bureaucracy": "3D+2"
+        },
+        "MEC": {
+          "repulsorlift_operation": "3D"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Blaster Pistol",
+          "type": "weapon",
+          "damage": "4D"
+        },
+        {
+          "name": "Forgery Kit",
+          "type": "tool"
+        }
+      ],
+      "credits": 1200,
+      "healthStatus": "healthy",
+      "forcePoints": 1,
+      "vehicles": []
+    },
+    {
+      "name": "Zaniri",
+      "attributes": {
+        "DEX": "2D+1",
+        "STR": "1D+2",
+        "PER": "3D",
+        "TEC": "4D",
+        "KNO": "3D+2",
+        "MEC": "2D"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "3D"
+        },
+        "STR": {
+          "brawling": "2D"
+        },
+        "PER": {
+          "persuasion": "3D+1",
+          "search": "4D"
+        },
+        "TEC": {
+          "computer_programming": "5D",
+          "droid_programming": "4D+2"
+        },
+        "KNO": {
+          "scholar": "4D+1",
+          "languages": "4D"
+        },
+        "MEC": {
+          "communications": "3D"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Chronometer",
+          "type": "tool"
+        },
+        {
+          "name": "DataPad",
+          "type": "tool"
+        }
+      ],
+      "credits": 900,
+      "healthStatus": "healthy",
+      "forcePoints": 1,
+      "vehicles": []
+    },
+    {
+      "name": "Lyra",
+      "attributes": {
+        "DEX": "3D+2",
+        "STR": "2D",
+        "PER": "2D+1",
+        "TEC": "2D+2",
+        "KNO": "1D+2",
+        "MEC": "4D"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "4D",
+          "blaster": "4D+1"
+        },
+        "STR": {
+          "brawling": "2D+1"
+        },
+        "PER": {
+          "persuasion": "2D+2"
+        },
+        "TEC": {
+          "computer_programming": "3D+1",
+          "repulsorlift_repair": "3D"
+        },
+        "KNO": {
+          "alien_species": "2D"
+        },
+        "MEC": {
+          "starship_piloting": "5D",
+          "astrogation": "4D+1"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Blaster Pistol",
+          "type": "weapon",
+          "damage": "4D"
+        },
+        {
+          "name": "Toolkit",
+          "type": "tool"
+        }
+      ],
+      "credits": 800,
+      "healthStatus": "healthy",
+      "forcePoints": 1,
+      "vehicles": []
+    },
+    {
+      "name": "Raeli",
+      "attributes": {
+        "DEX": "1D+1",
+        "STR": "2D",
+        "PER": "3D+1",
+        "TEC": "2D",
+        "KNO": "4D",
+        "MEC": "1D+2"
+      },
+      "skills": {
+        "DEX": {
+          "dodge": "1D+2"
+        },
+        "STR": {
+          "brawling": "2D+1"
+        },
+        "PER": {
+          "persuasion": "4D",
+          "search": "4D+1"
+        },
+        "TEC": {
+          "first_aid": "3D"
+        },
+        "KNO": {
+          "scholar": "5D",
+          "willpower": "5D+1"
+        },
+        "MEC": {
+          "communications": "2D"
+        }
+      },
+      "equipment": [
+        {
+          "name": "Walking Stick",
+          "type": "weapon",
+          "damage": "2D"
+        },
+        {
+          "name": "Healing Herbs",
+          "type": "medical"
+        }
+      ],
+      "credits": 500,
+      "healthStatus": "healthy",
+      "forcePoints": 2,
+      "vehicles": []
+    }
+  ]
+}
