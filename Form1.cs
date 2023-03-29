@@ -27,8 +27,8 @@ namespace ChatRPG
             CharacterModel.Character currentCharacter = _characters[_currentIndex];
 
             // Update the label with the current character's name
-            Label_CharacterName.Text = currentCharacter.Name;
-
+            //Label_CharacterName.Text = currentCharacter.Name;
+            GrpBx_Character.Text = currentCharacter.Name;
             // Update the labels with the current character's attribute values
             Label_DEX.Text = $"DEX: {currentCharacter.Attributes?.GetValueOrDefault("DEX") ?? "N/A"}";
             Label_PER.Text = $"PER: {currentCharacter.Attributes?.GetValueOrDefault("PER") ?? "N/A"}";
@@ -72,10 +72,10 @@ namespace ChatRPG
                         throw new InvalidOperationException($"Unknown skill category '{skillCategory.Key}'");
                 }
             }
-    //
+            //
 
         }
-        
+
         //// UI event handlers
         private void Btn_Send_Click(object sender, EventArgs e)
         {

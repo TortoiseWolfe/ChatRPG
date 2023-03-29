@@ -38,7 +38,6 @@
             Label_STR = new Label();
             Label_MEC = new Label();
             Label_DEX = new Label();
-            Label_CharacterName = new Label();
             Btn_Next = new Button();
             Btn_Previous = new Button();
             ComboBox_Equipment = new ComboBox();
@@ -106,7 +105,6 @@
             GrpBx_Character.Controls.Add(Label_STR);
             GrpBx_Character.Controls.Add(Label_MEC);
             GrpBx_Character.Controls.Add(Label_DEX);
-            GrpBx_Character.Controls.Add(Label_CharacterName);
             GrpBx_Character.Controls.Add(Btn_Next);
             GrpBx_Character.Controls.Add(Btn_Previous);
             GrpBx_Character.Controls.Add(ComboBox_Equipment);
@@ -129,6 +127,7 @@
             GrpBx_Character.Controls.Add(Btn_MEC);
             GrpBx_Character.Controls.Add(Btn_KNO);
             GrpBx_Character.Controls.Add(Btn_DEX);
+            GrpBx_Character.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             GrpBx_Character.Location = new Point(404, 155);
             GrpBx_Character.Name = "GrpBx_Character";
             GrpBx_Character.Size = new Size(384, 261);
@@ -196,16 +195,6 @@
             Label_DEX.TabIndex = 21;
             Label_DEX.Text = "label1";
             // 
-            // Label_CharacterName
-            // 
-            Label_CharacterName.AutoSize = true;
-            Label_CharacterName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Label_CharacterName.Location = new Point(69, 6);
-            Label_CharacterName.Name = "Label_CharacterName";
-            Label_CharacterName.Size = new Size(40, 15);
-            Label_CharacterName.TabIndex = 20;
-            Label_CharacterName.Text = "label1";
-            // 
             // Btn_Next
             // 
             Btn_Next.FlatStyle = FlatStyle.Popup;
@@ -266,7 +255,7 @@
             // 
             ComboBox_PER.BackColor = Color.PaleGoldenrod;
             ComboBox_PER.FormattingEnabled = true;
-            ComboBox_PER.Items.AddRange(new object[] { "", "Blaster Repair", "Capital Ship Repair", "Computer Programming/Repair", "Droid Programming/Repair", "Ground Vehicle Repair", "Security", "Space Transports Repair", "Starship Repair", "Armor Repair", "Demolitions" });
+            ComboBox_PER.Items.AddRange(new object[] { "", "Bargain", "Command", "Con", "Forgery", "Gambling", "Hide", "Investigation", "Persuasion", "Search" });
             ComboBox_PER.Location = new Point(6, 185);
             ComboBox_PER.Name = "ComboBox_PER";
             ComboBox_PER.Size = new Size(182, 23);
@@ -483,7 +472,6 @@
         private ComboBox ComboBox_Equipment;
         private Button Btn_Previous;
         private Button Btn_Next;
-        private Label Label_CharacterName;
         private Label Label_DEX;
         private Label Label_PER;
         private Label Label_STR;
