@@ -20,158 +20,6 @@ namespace ChatRPG
             _currentIndex = 0;
             UpdateCharacterUI();
         }
-        private void Btn_Send_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(TxtBox_Chat_Input.Text))
-            {
-                ListBox_Chat.Items.Add("User: " + TxtBox_Chat_Input.Text);
-                string botResponse = GetBotResponse(TxtBox_Chat_Input.Text);
-                ListBox_Chat.Items.Add("Bot: " + botResponse);
-                TxtBox_Chat_Input.Clear();
-            }
-        }
-        private string GetBotResponse(string input)
-        {
-            // Process user input and generate a response.
-            // You can implement your own logic here, or call an external API like OpenAI's GPT.
-            string response = "I am a simple bot, and I don't have much to say.";
-
-            return response;
-        }
-        private void TxtBox_Chat_Input_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true; // To prevent the 'beep' sound when pressing Enter
-                e.SuppressKeyPress = true; // To prevent a new line being added to the TextBox
-
-                if (!string.IsNullOrWhiteSpace(TxtBox_Chat_Input.Text))
-                {
-                    ListBox_Chat.Items.Add("User: " + TxtBox_Chat_Input.Text);
-                    string botResponse = GetBotResponse(TxtBox_Chat_Input.Text);
-                    ListBox_Chat.Items.Add("Bot: " + botResponse);
-                    TxtBox_Chat_Input.Clear();
-                }
-            }
-        }
-        private void Btn_DEX_Click(object sender, EventArgs e)
-        {
-            string dexValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("DEX") ?? "1D";
-            int sum = RollDice(dexValue);
-            TxtBox_Chat_Input.AppendText($"DEX({sum})" + Environment.NewLine);
-        }
-        private void Btn_PER_Click(object sender, EventArgs e)
-        {
-            string perValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("PER") ?? "1D";
-            int sum = RollDice(perValue);
-            TxtBox_Chat_Input.AppendText($"PER({sum})" + Environment.NewLine);
-        }
-        private void Btn_KNO_Click(object sender, EventArgs e)
-        {
-            string knoValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("KNO") ?? "1D";
-            int sum = RollDice(knoValue);
-            TxtBox_Chat_Input.AppendText($"KNO({sum})" + Environment.NewLine);
-        }
-        private void Btn_STR_Click(object sender, EventArgs e)
-        {
-            string strValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("STR") ?? "1D";
-            int sum = RollDice(strValue);
-            TxtBox_Chat_Input.AppendText($"STR({sum})" + Environment.NewLine);
-        }
-        private void Btn_MEC_Click(object sender, EventArgs e)
-        {
-            string mecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("MEC") ?? "1D";
-            int sum = RollDice(mecValue);
-            TxtBox_Chat_Input.AppendText($"MEC({sum})" + Environment.NewLine);
-        }
-        private void Btn_TEC_Click(object sender, EventArgs e)
-        {
-            string tecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("TEC") ?? "1D";
-            int sum = RollDice(tecValue);
-            TxtBox_Chat_Input.AppendText($"TEC({sum})" + Environment.NewLine);
-        }
-        private int RollDice(string diceNotation)
-        {
-            var parts = diceNotation.Split('D', '+');
-            int numberOfRolls = int.Parse(parts[0]);
-            int modifier = parts.Length == 3 ? int.Parse(parts[2]) : 0;
-
-            int sum = 0;
-            for (int i = 0; i < numberOfRolls; i++)
-            {
-                sum += _random.Next(1, 7); // Generate a random number between 1 and 6
-            }
-            return sum + modifier;
-        }
-        private void ComboBox_DEX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Btn_Next_Click(object sender, EventArgs e)
-        {
-            _currentIndex++;
-            if (_currentIndex >= _characters.Count)
-            {
-                _currentIndex = 0;
-            }
-            UpdateCharacterUI();
-        }
-        private void Btn_Previous_Click(object sender, EventArgs e)
-        {
-            _currentIndex--;
-            if (_currentIndex < 0)
-            {
-                _currentIndex = _characters.Count - 1;
-            }
-            UpdateCharacterUI();
-        }
-        private void UpdateComboBoxWithList(ComboBox comboBox, List<string> items)
-
-        {
-            comboBox.Items.Clear();
-
-            if (items != null)
-            {
-                foreach (var item in items)
-                {
-                    if (item != null)
-                    {
-                        comboBox.Items.Add(item);
-                    }
-                }
-            }
-        }
-        private List<string> DictionaryToList(Dictionary<string, string>? dictionary)
-        {
-            var list = new List<string>();
-
-            if (dictionary != null)
-            {
-                foreach (var keyValuePair in dictionary)
-                {
-                    if (keyValuePair.Key != null && keyValuePair.Value != null)
-                    {
-                        list.Add($"{keyValuePair.Key}: {keyValuePair.Value}");
-                    }
-                }
-            }
-
-            return list;
-        }
-        private List<string> EquipmentToList(List<CharacterModel.Equipment>? equipmentList)
-        {
-            var list = new List<string>();
-
-            if (equipmentList != null)
-            {
-                foreach (var equipment in equipmentList)
-                {
-                    list.Add($"{equipment.Name} ({equipment.Type}) - Damage: {equipment.Damage}");
-                }
-            }
-
-            return list;
-        }
         private void UpdateCharacterUI()
         {
             CharacterModel.Character currentCharacter = _characters[_currentIndex];
@@ -225,9 +73,170 @@ namespace ChatRPG
     //
 
         }
+        
+        //// UI event handlers
+        private void Btn_Send_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TxtBox_Chat_Input.Text))
+            {
+                ListBox_Chat.Items.Add("User: " + TxtBox_Chat_Input.Text);
+                string botResponse = GetBotResponse(TxtBox_Chat_Input.Text);
+                ListBox_Chat.Items.Add("Bot: " + botResponse);
+                TxtBox_Chat_Input.Clear();
+            }
+        }
+        private void TxtBox_Chat_Input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; // To prevent the 'beep' sound when pressing Enter
+                e.SuppressKeyPress = true; // To prevent a new line being added to the TextBox
+
+                if (!string.IsNullOrWhiteSpace(TxtBox_Chat_Input.Text))
+                {
+                    ListBox_Chat.Items.Add("User: " + TxtBox_Chat_Input.Text);
+                    string botResponse = GetBotResponse(TxtBox_Chat_Input.Text);
+                    ListBox_Chat.Items.Add("Bot: " + botResponse);
+                    TxtBox_Chat_Input.Clear();
+                }
+            }
+        }
+        private void Btn_DEX_Click(object sender, EventArgs e)
+        {
+            string dexValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("DEX") ?? "1D";
+            int sum = RollDice(dexValue);
+            TxtBox_Chat_Input.AppendText($"DEX({sum})" + Environment.NewLine);
+        }
+        private void Btn_PER_Click(object sender, EventArgs e)
+        {
+            string perValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("PER") ?? "1D";
+            int sum = RollDice(perValue);
+            TxtBox_Chat_Input.AppendText($"PER({sum})" + Environment.NewLine);
+        }
+        private void Btn_KNO_Click(object sender, EventArgs e)
+        {
+            string knoValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("KNO") ?? "1D";
+            int sum = RollDice(knoValue);
+            TxtBox_Chat_Input.AppendText($"KNO({sum})" + Environment.NewLine);
+        }
+        private void Btn_STR_Click(object sender, EventArgs e)
+        {
+            string strValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("STR") ?? "1D";
+            int sum = RollDice(strValue);
+            TxtBox_Chat_Input.AppendText($"STR({sum})" + Environment.NewLine);
+        }
+        private void Btn_MEC_Click(object sender, EventArgs e)
+        {
+            string mecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("MEC") ?? "1D";
+            int sum = RollDice(mecValue);
+            TxtBox_Chat_Input.AppendText($"MEC({sum})" + Environment.NewLine);
+        }
+        private void Btn_TEC_Click(object sender, EventArgs e)
+        {
+            string tecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("TEC") ?? "1D";
+            int sum = RollDice(tecValue);
+            TxtBox_Chat_Input.AppendText($"TEC({sum})" + Environment.NewLine);
+        }
+        private void Btn_Next_Click(object sender, EventArgs e)
+        {
+            _currentIndex++;
+            if (_currentIndex >= _characters.Count)
+            {
+                _currentIndex = 0;
+            }
+            UpdateCharacterUI();
+        }
+        private void Btn_Previous_Click(object sender, EventArgs e)
+        {
+            _currentIndex--;
+            if (_currentIndex < 0)
+            {
+                _currentIndex = _characters.Count - 1;
+            }
+            UpdateCharacterUI();
+        }
+        private void ComboBox_DEX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void ComboBox_Equipment_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        //// Character attribute and equipment handling
+        private List<string> DictionaryToList(Dictionary<string, string>? dictionary)
+        {
+            var list = new List<string>();
+
+            if (dictionary != null)
+            {
+                foreach (var keyValuePair in dictionary)
+                {
+                    if (keyValuePair.Key != null && keyValuePair.Value != null)
+                    {
+                        list.Add($"{keyValuePair.Key}: {keyValuePair.Value}");
+                    }
+                }
+            }
+
+            return list;
+        }
+        private List<string> EquipmentToList(List<CharacterModel.Equipment>? equipmentList)
+        {
+            var list = new List<string>();
+
+            if (equipmentList != null)
+            {
+                foreach (var equipment in equipmentList)
+                {
+                    list.Add($"{equipment.Name} ({equipment.Type}) - Damage: {equipment.Damage}");
+                }
+            }
+
+            return list;
+        }
+        private void UpdateComboBoxWithList(ComboBox comboBox, List<string> items)
+
+        {
+            comboBox.Items.Clear();
+
+            if (items != null)
+            {
+                foreach (var item in items)
+                {
+                    if (item != null)
+                    {
+                        comboBox.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        //// Chat functionality
+        private string GetBotResponse(string input)
+        {
+            // Process user input and generate a response.
+            // You can implement your own logic here, or call an external API like OpenAI's GPT.
+            string response = "I am a simple bot, and I don't have much to say.";
+
+            return response;
+        }
+
+        //// Dice rolling
+        private int RollDice(string diceNotation)
+        {
+            var parts = diceNotation.Split('D', '+');
+            int numberOfRolls = int.Parse(parts[0]);
+            int modifier = parts.Length == 3 ? int.Parse(parts[2]) : 0;
+
+            int sum = 0;
+            for (int i = 0; i < numberOfRolls; i++)
+            {
+                sum += _random.Next(1, 7); // Generate a random number between 1 and 6
+            }
+            return sum + modifier;
+        }
+    
     }
 }
