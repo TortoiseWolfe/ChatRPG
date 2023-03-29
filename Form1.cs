@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Linq;
+using ChatRPG.Helpers;
+
 namespace ChatRPG
 {
     public partial class Form1 : Form
@@ -104,37 +106,37 @@ namespace ChatRPG
         private void Btn_DEX_Click(object sender, EventArgs e)
         {
             string dexValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("DEX") ?? "1D";
-            int sum = RollDice(dexValue);
+            int sum = DiceHelper.RollDice(dexValue);
             TxtBox_Chat_Input.AppendText($"DEX({sum})" + Environment.NewLine);
         }
         private void Btn_PER_Click(object sender, EventArgs e)
         {
             string perValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("PER") ?? "1D";
-            int sum = RollDice(perValue);
+            int sum = DiceHelper.RollDice(perValue);
             TxtBox_Chat_Input.AppendText($"PER({sum})" + Environment.NewLine);
         }
         private void Btn_KNO_Click(object sender, EventArgs e)
         {
             string knoValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("KNO") ?? "1D";
-            int sum = RollDice(knoValue);
+            int sum = DiceHelper.RollDice(knoValue);
             TxtBox_Chat_Input.AppendText($"KNO({sum})" + Environment.NewLine);
         }
         private void Btn_STR_Click(object sender, EventArgs e)
         {
             string strValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("STR") ?? "1D";
-            int sum = RollDice(strValue);
+            int sum = DiceHelper.RollDice(strValue);
             TxtBox_Chat_Input.AppendText($"STR({sum})" + Environment.NewLine);
         }
         private void Btn_MEC_Click(object sender, EventArgs e)
         {
             string mecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("MEC") ?? "1D";
-            int sum = RollDice(mecValue);
+            int sum = DiceHelper.RollDice(mecValue);
             TxtBox_Chat_Input.AppendText($"MEC({sum})" + Environment.NewLine);
         }
         private void Btn_TEC_Click(object sender, EventArgs e)
         {
             string tecValue = _characters[_currentIndex].Attributes?.GetValueOrDefault("TEC") ?? "1D";
-            int sum = RollDice(tecValue);
+            int sum = DiceHelper.RollDice(tecValue);
             TxtBox_Chat_Input.AppendText($"TEC({sum})" + Environment.NewLine);
         }
         private void Btn_Next_Click(object sender, EventArgs e)
@@ -216,11 +218,7 @@ namespace ChatRPG
         //// Chat functionality
         private string GetBotResponse(string input)
         {
-            // Process user input and generate a response.
-            // You can implement your own logic here, or call an external API like OpenAI's GPT.
-            string response = "I am a simple bot, and I don't have much to say.";
-
-            return response;
+            return ChatHelper.GetBotResponse(input);
         }
 
         //// Dice rolling
@@ -237,6 +235,5 @@ namespace ChatRPG
             }
             return sum + modifier;
         }
-    
     }
 }
